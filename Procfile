@@ -1,1 +1,1 @@
-web: sudo sh ./start.sh
+web: ./start.sh
