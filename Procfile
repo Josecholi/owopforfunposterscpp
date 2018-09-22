@@ -1,1 +1,1 @@
-web: ./start.sh
+web: ./out $PORT mod_please anarchy_please__9356tytuy474y7g573543yge4896 dev_please
