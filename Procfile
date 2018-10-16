@@ -1,1 +1,1 @@
-web: ./out $PORT mod_please anarchy_please__9356tytuy474y7g573543yge4896 dev_please
+web: ./out $PORT mod_please tonq_oof_h dev_please
