@@ -48,7 +48,7 @@ Commands::Commands(Server * const sv) {
 		{"getid", std::bind(Commands::getid, sv, this, std::placeholders::_1, std::placeholders::_2)},
 		{"kick", std::bind(Commands::kick, sv, this, std::placeholders::_1, std::placeholders::_2)},
 		{"lock", std::bind(Commands::lock, sv, this, std::placeholders::_1, std::placeholders::_2)},
-		{"ids", std::bind(Commands::ids, sv, this, std::placeholders::_1, std::placeholders::_2)}
+		{"ids", std::bind(Commands::ids, sv, this, std::placeholders::_1, std::placeholders::_2)},
 		{"reload", std::bind(Commands::reload, sv, this, std::placeholders::_1, std::placeholders::_2)},
 		{"lockdown", std::bind(Commands::lockdown, sv, this, std::placeholders::_1, std::placeholders::_2)},
 		{"bansuspicious", std::bind(Commands::bansuspicious, sv, this, std::placeholders::_1, std::placeholders::_2)},
