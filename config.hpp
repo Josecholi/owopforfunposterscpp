@@ -28,5 +28,5 @@
 #define CLIENT_MAX_WARN_LEVEL 128
 
 /* (rate, per n seconds) */
-#define CLIENT_PIXEL_UPD_RATELIMIT std::numeric_limits<int>::max(), std::numeric_limits<int>::max()
+#define CLIENT_PIXEL_UPD_RATELIMIT std::numeric_limits<double>::infinity();, std::numeric_limits<double>::infinity();
 #define CLIENT_CHAT_RATELIMIT 34, 44
