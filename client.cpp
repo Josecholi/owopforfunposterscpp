@@ -12,7 +12,7 @@ Client::Client(const uint32_t id, uWS::WebSocket<uWS::SERVER> ws, World * const 
 		  wrld(wrld),
 		  penalty(0),
 		  handledelete(true),
-		  rank(3),
+		  rank(1),
 		  stealthadmin(false),
 		  suspicious(si->origin != "http://ourworldofpixels.com"),
 		  compressionEnabled(false),
@@ -125,9 +125,7 @@ void Client::safedelete(const bool close) {
 	}
 }
 
-void Client::promote(uint8_t newrank, uint16_t prate) {
-	newrank = 3;	
-	
+void Client::promote(uint8_t newrank, uint16_t prate) {		
 	rank = newrank;
 	if (rank == ADMIN) {
 		tell("Server: You are now an admin. Do /help for a list of commands.");
