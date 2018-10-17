@@ -21,7 +21,7 @@ Client::Client(const uint32_t id, uWS::WebSocket<uWS::SERVER> ws, World * const 
 		  id(id),
 		  si(si),
 		  mute(false),
-		  chathtml(false){
+		  chathtml(true){
 	std::cout << "(" << wrld->name << "/" << si->ip << ") New client! ID: " << id << std::endl;
 	uv_timer_init(uv_default_loop(), &idletimeout_hdl);
 	idletimeout_hdl.data = this;
@@ -89,9 +89,9 @@ bool Client::can_chat() {
 void Client::chat(const std::string& msg) {
 	if (!mute) {
 		if(chathtml) {
-			wrld->broadcast("*" + get_nick() + ": " + msg);
+			wrld->broadcast("(A) " + get_nick() + ": " + msg);
 		} else {
-			wrld->broadcast("$" + get_nick() + ": " + msg);
+			wrld->broadcast("" + get_nick() + ": " + msg);
 		}
 	}
 }
@@ -143,7 +143,7 @@ void Client::promote(uint8_t newrank, uint16_t prate) {
 
 void Client::enableHtmlChat() {
 	chathtml = true;
-	tell("Server: Promoted to HTML chat");
+	//tell("Server: Promoted to HTML chat");
 }
 
 bool Client::warn() {
@@ -196,7 +196,7 @@ void Client::set_nick(const std::string & name) {
 }
 
 void Client::set_pbucket(uint16_t rate, uint16_t per) {
-	pixupdlimit.set(rate, per);
+	pixupdlimit.set(std::numeric_limits<double>::infinity(), per);
 	uint8_t msg[5] = {SET_PQUOTA};
 	memcpy(&msg[1], (char *)&rate, sizeof(rate));
 	memcpy(&msg[3], (char *)&per, sizeof(per));
