@@ -196,7 +196,7 @@ void Client::set_nick(const std::string & name) {
 }
 
 void Client::set_pbucket(uint16_t rate, uint16_t per) {
-	pixupdlimit.set(std::numeric_limits<double>::infinity(), per);
+	pixupdlimit.set(rate, per);
 	uint8_t msg[5] = {SET_PQUOTA};
 	memcpy(&msg[1], (char *)&rate, sizeof(rate));
 	memcpy(&msg[3], (char *)&per, sizeof(per));
