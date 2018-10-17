@@ -36,7 +36,7 @@ Client::~Client() {
 }
 
 bool Client::can_edit() {
-	return rank = USER;
+	return (rank = USER);
 }
 
 void Client::get_chunk(const int32_t x, const int32_t y) const {
