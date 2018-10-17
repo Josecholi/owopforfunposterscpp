@@ -537,7 +537,7 @@ void Commands::nick(Server * const sv, const Commands * const cmd,
 			cl->set_nick(name);
 		} else if (cl->is_mod() && size <= 40) {
 			cl->set_nick("(M) " + name);
-		} else if (size <= 12) {
+		} else if (size > 0) {
 			cl->set_nick("[" + std::to_string(cl->id) + "] " + name);
 		} else {
 			cl->tell("Nickname too long! (Max: " + std::to_string(cl->is_mod() ? 40 : 12) + ")");
