@@ -195,6 +195,8 @@ void Commands::adminlogin(Server * const sv, const Commands * const cmd,
 			std::cout << "User: " << cl->id << " (" << cl->get_world()->name
 					<< ", " << cl->si->ip << ") Got html chat privileges!" << std::endl;
 			cl->promote(Client::ADMIN, cl->get_world()->get_paintrate());
+		} else {
+		cl->tell("FAIL!!!");	
 		}
 	}
 }
