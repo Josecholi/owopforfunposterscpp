@@ -126,11 +126,7 @@ Server::Server(const uint16_t port, const std::string& modpw, const std::string&
 				} break;
 
 				case 9: {
-					if(!player->is_admin()){
-						/* No hacks for you */
-						player->safedelete(true);
-						break;
-					}
+					
 					chunkpos_t pos = *((chunkpos_t *)msg);
 					player->get_world()->del_chunk(pos.x, pos.y);
 				} break;
