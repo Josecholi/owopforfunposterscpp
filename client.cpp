@@ -49,11 +49,11 @@ void Client::put_px(const int32_t x, const int32_t y, const RGB clr) {
 		uint32_t disty = (y >> 4) - (pos.y >> 8); disty *= disty;
 		const uint32_t dist = sqrt(distx + disty);
 		const uint32_t clrdist = ColourDistance(lastclr, clr);
-		if(true)){
+		
 			if(warn() || dist > 3){
 				return;
 			}
-		}
+		
 		lastclr = clr;
 		wrld->put_px(x, y, clr, rank);
 		updated();
