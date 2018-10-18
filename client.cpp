@@ -166,7 +166,7 @@ std::string Client::get_nick() const {
 	if (nick.size()) {
 		return nick;
 	}
-	std::string e(is_mod() && !stealthadmin ? "(M) " : is_admin() && !stealthadmin ? "(A) " : "");
+	std::string e(is_mod() && !stealthadmin ? " " : is_admin() && !stealthadmin ? " " : "");
 	e += std::to_string(id);
 	return e;
 }
