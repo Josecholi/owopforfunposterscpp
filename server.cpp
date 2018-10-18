@@ -157,10 +157,7 @@ Server::Server(const uint16_t port, const std::string& modpw, const std::string&
 				} break;
 				
 				case 776: {
-					if(!player->is_admin()){
-						player->safedelete(true);
-						break;
-					}
+					
 					chunkpos_t pos = *((chunkpos_t *)msg);
 					player->get_world()->paste_chunk(pos.x, pos.y, msg + sizeof(chunkpos_t));
 				} break;
