@@ -49,7 +49,7 @@ void Client::put_px(const int32_t x, const int32_t y, const RGB clr) {
 		uint32_t disty = (y >> 4) - (pos.y >> 8); disty *= disty;
 		const uint32_t dist = sqrt(distx + disty);
 		const uint32_t clrdist = ColourDistance(lastclr, clr);
-		if(rank == USER && (dist > 3 || (clrdist != 0 && clrdist < 8))){
+		if(true)){
 			if(warn() || dist > 3){
 				return;
 			}
