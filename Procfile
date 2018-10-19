@@ -1,1 +1,1 @@
-web: ./out $PORT mod_please ifshareibanoof dev_please
+web: ./out $PORT grusza mathiasa zjada
