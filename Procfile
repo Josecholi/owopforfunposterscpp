@@ -1,1 +1,1 @@
-web: ./out $PORT grusza mathiasa zjada
+web: ./out $PORT yourpass yourpass yourpass
